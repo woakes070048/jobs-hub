@@ -1,6 +1,6 @@
 <?php namespace JobApis\JobsHub\Jobs;
 
-use JobApis\JobsHub\Models\User;
+use JobApis\JobsHub\Models\Provider;
 
 class GetProviders
 {
@@ -22,9 +22,8 @@ class GetProviders
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function handle(User $model)
+    public function handle(Provider $model)
     {
-        return $model->where('id', $this->userId)->first()
-            ->providers()->get();
+        return $model->whereUserId($this->userId)->get();
     }
 }
