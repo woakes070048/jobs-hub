@@ -1,6 +1,6 @@
 <?php namespace JobApis\JobsHub\Jobs;
 
-use JobApis\JobsHub\Models\Provider;
+use JobApis\JobsHub\Models\User;
 
 class GetJobListingsByProvider
 {
@@ -28,9 +28,23 @@ class GetJobListingsByProvider
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function handle(Provider $providerModel)
+    public function handle(User $user)
     {
-        $provider = $providerModel->where('name', $this->providerName)->first();
-        // WIP
+        // Get the provider (if user has access to it)
+        $provider = $user->where('id', $this->options['user_id'])->first()
+            ->providers()->where('name', 'like', $this->providerName)
+            ->first();
+
+        if ($provider) {
+            // Get jobs from the provider
+
+            // Return results
+            return response('Worked', 200);
+
+            // If no jobs found
+            // return response('No entries found', 404);
+        }
+
+        return response("Access denied for provider '{$this->providerName}'.'", 403);
     }
 }

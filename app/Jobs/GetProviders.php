@@ -1,29 +1,30 @@
 <?php namespace JobApis\JobsHub\Jobs;
 
-use JobApis\JobsHub\Models\Provider;
+use JobApis\JobsHub\Models\User;
 
 class GetProviders
 {
     /**
-     * @var array $user
+     * @var string $userId
      */
-    protected $user;
+    protected $userId;
 
     /**
      * Create a new job instance.
      */
-    public function __construct($user)
+    public function __construct($userId)
     {
-        $this->user = $user;
+        $this->userId = $userId;
     }
 
     /**
-     * Get
+     * Get providers by userId
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function handle(Provider $providerModel)
+    public function handle(User $model)
     {
-        // wip
+        return $model->where('id', $this->userId)->first()
+            ->providers()->get();
     }
 }

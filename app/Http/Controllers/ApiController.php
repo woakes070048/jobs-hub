@@ -43,12 +43,9 @@ class ApiController extends BaseController
             'user_id',
         ]);
 
-        if ($results = $this->dispatchNow(
+        return $this->dispatchNow(
             new GetJobListingsByProvider($provider, $options)
-        )) {
-            return response()->json($results);
-        }
-        return response('No entries found', 404);
+        );
     }
 
     /**
