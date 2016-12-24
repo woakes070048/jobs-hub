@@ -33,7 +33,7 @@ class GetJobListingsByProvider
     {
         // Get the provider (if user has access to it)
         $provider = $model->whereUserId($this->options['user_id'])
-            ->where('name', 'like', $this->providerName)
+            ->where('name', 'like', ucfirst($this->providerName))
             ->first();
 
         if ($provider) {
