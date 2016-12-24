@@ -32,11 +32,11 @@ class CreateInitialTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create('user_providers', function (Blueprint $table) {
-            $table->uuid('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::create('provider_user', function (Blueprint $table) {
             $table->uuid('provider_id')->unsigned();
             $table->foreign('provider_id')->references('id')->on('providers');
+            $table->uuid('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->primary(['user_id', 'provider_id']);
             $table->json('provider_options')->nullable();
             $table->timestamps();
