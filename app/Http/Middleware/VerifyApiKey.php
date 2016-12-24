@@ -16,8 +16,8 @@ class VerifyApiKey
     {
         if ($user = User::where('api_key', $request->get('api_key'))->first()) {
             $request->replace(
-                // Append the user to the request input
-                $request->all() + ['user' => $user->toArray()]
+                // Append the user_id to the request input
+                $request->all() + ['user_id' => $user->id]
             );
             return $next($request);
         }
