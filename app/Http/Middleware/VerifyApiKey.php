@@ -1,6 +1,6 @@
-<?php namespace App\Http\Middleware;
+<?php namespace JobApis\JobsHub\Http\Middleware;
 
-use App\Models\User;
+use JobApis\JobsHub\Models\User;
 use Closure;
 
 class VerifyApiKey

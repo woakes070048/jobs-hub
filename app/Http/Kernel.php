@@ -1,4 +1,4 @@
-<?php namespace App\Http;
+<?php namespace JobApis\JobsHub\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -29,7 +29,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            \App\Http\Middleware\VerifyApiKey::class,
+            \JobApis\JobsHub\Http\Middleware\VerifyApiKey::class,
         ],
     ];
 

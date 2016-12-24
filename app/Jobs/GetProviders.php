@@ -1,6 +1,6 @@
-<?php namespace App\Jobs;
+<?php namespace JobApis\JobsHub\Jobs;
 
-use App\Models\Provider;
+use JobApis\JobsHub\Models\Provider;
 
 class GetProviders
 {

@@ -2,8 +2,8 @@
 
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
-use App\Models\Provider;
-use App\Models\User;
+use JobApis\JobsHub\Models\Provider;
+use JobApis\JobsHub\Models\User;
 
 class TestingDatabaseSeeder extends Seeder
 {

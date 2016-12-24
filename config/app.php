@@ -172,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        JobApis\JobsHub\Providers\AppServiceProvider::class,
+        JobApis\JobsHub\Providers\AuthServiceProvider::class,
+        // JobApis\JobsHub\Providers\BroadcastServiceProvider::class,
+        JobApis\JobsHub\Providers\EventServiceProvider::class,
+        JobApis\JobsHub\Providers\RouteServiceProvider::class,
 
     ],
 

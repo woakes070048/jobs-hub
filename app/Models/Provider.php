@@ -1,4 +1,4 @@
-<?php namespace App\Models;
+<?php namespace JobApis\JobsHub\Models;
 
 class Provider extends AbstractModel
 {

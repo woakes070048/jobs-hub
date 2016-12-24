@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers;
+<?php namespace JobApis\JobsHub\Http\Controllers;
 
-use App\Jobs\GetJobListingsByProvider;
-use App\Jobs\GetProviders;
-use App\Jobs\GetUsers;
+use JobApis\JobsHub\Jobs\GetJobListingsByProvider;
+use JobApis\JobsHub\Jobs\GetProviders;
+use JobApis\JobsHub\Jobs\GetUsers;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
