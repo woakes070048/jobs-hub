@@ -1,6 +1,6 @@
 <?php namespace JobApis\JobsHub\Http\Controllers;
 
-use JobApis\JobsHub\Jobs\GetJobListingsByProvider;
+use JobApis\JobsHub\Jobs\GetJobListings;
 use JobApis\JobsHub\Jobs\GetProviders;
 use JobApis\JobsHub\Jobs\GetUsers;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -44,7 +44,7 @@ class ApiController extends BaseController
         ]);
 
         return $this->dispatchNow(
-            new GetJobListingsByProvider($provider, $options)
+            new GetJobListings($provider, $options)
         );
     }
 

@@ -7,11 +7,11 @@ class Provider extends AbstractModel
     /**
      * Defines the relationship to Provider model
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withPivot('provider_options');
     }
 
     /**
